@@ -1,13 +1,21 @@
 <?php
     namespace VET;
-    include_once ('Render.php');
-
+    include_once ('controllers/Home.php');
     class Index {
 
         public function run(){
-            $view = new Render();
-            $view->renderView('views/home.php');
-
+            if (isset($_GET['page']))
+            {
+                $page = $_GET['page'];
+                if (class_exists($page))
+                {
+                    new $page;
+                }else{
+                    new Home();
+                }
+            }else{
+                new Home();
+            }
         }
     }
 
