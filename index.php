@@ -1,24 +1,7 @@
 <?php
-    namespace VET;
-    include_once ('controllers/Home.php');
-    class Index {
 
-        public function run(){
-            if (isset($_GET['page']))
-            {
-                $page = $_GET['page'];
-                if (class_exists($page))
-                {
-                    new $page;
-                }else{
-                    new Home();
-                }
-            }else{
-                new Home();
-            }
-        }
-    }
+include_once('core/Run.php');
 
-    $program = new Index();
-    $program->run();
+$program = new Run();
+$program->run();
 
