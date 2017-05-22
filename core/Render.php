@@ -31,4 +31,16 @@ class Render
     {
         require_once ($body);
     }
+
+    public function renderHeader ()
+    {
+        require_once ($this->header);
+        require_once ($this->navbar);
+    }
+
+    public function renderFooter ()
+    {
+        require_once ($this->footer);
+    }
 }
+
