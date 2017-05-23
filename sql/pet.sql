@@ -41,7 +41,7 @@ CREATE TABLE `pet` (
 -- Volcado de datos para la tabla `pet`
 --
 
-INSERT INTO `pet` (`id`, `alias`, `especie`, `raza`, `color`, `fecha_nacimiento`, `peso_medio`, `peso_actual`) VALUES
+INSERT INTO `pet` (pet_id, `alias`, `especie`, `raza`, `color`, `fecha_nacimiento`, `peso_medio`, `peso_actual`) VALUES
 (1, 'dyler', 'perro', 'labrador', 'cafe', '2016-09-02', 20, 22),
 (2, 'kasy', 'perro', 'labrador', 'chocolate', '2015-09-09', 15, 15),
 (3, 'Ginebra', 'Perro', 'salchicha', 'cafe', '2017-05-03', 10, 12),
@@ -55,7 +55,7 @@ INSERT INTO `pet` (`id`, `alias`, `especie`, `raza`, `color`, `fecha_nacimiento`
 -- Indices de la tabla `pet`
 --
 ALTER TABLE `pet`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (pet_id);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -65,7 +65,7 @@ ALTER TABLE `pet`
 -- AUTO_INCREMENT de la tabla `pet`
 --
 ALTER TABLE `pet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY pet_id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

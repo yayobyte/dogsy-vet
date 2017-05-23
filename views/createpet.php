@@ -6,6 +6,8 @@
     </div>
     <div class="row">
         <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
             <table class="table table-striped table-hover ">
                 <thead>
                 <tr>
@@ -17,13 +19,14 @@
                     <th>Fecha de Nacimiento</th>
                     <th>Peso Medio</th>
                     <th>Peso Actual</th>
+                    <th>Familia</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($this->params['data'] as $row):?>
                     <tr>
-                        <td><?php echo $row['id']?></td>
+                        <td><?php echo $row['pet_id']?></td>
                         <td><?php echo $row['alias']?></td>
                         <td><?php echo $row['especie']?></td>
                         <td><?php echo $row['raza']?></td>
@@ -31,16 +34,16 @@
                         <td><?php echo $row['fecha_nacimiento']?></td>
                         <td><?php echo $row['peso_medio']?></td>
                         <td><?php echo $row['peso_actual']?></td>
-                        <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createpet&action=deletepet&id=<?php echo $row['id']?>">Borrar</a></td>
+                        <td><span class="text-warning"><?php echo $row['apellido_familia']?></span></td>
+                        <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createpet&action=deletepet&id=<?php echo $row['pet_id']?>">Borrar</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <div class="btn btn-success" onclick="$('#modal').modal('show')">Insertar</div>
+            <div class="text-center">
+                <div class="btn btn-success" onclick="$('#modal').modal('show')">Insertar</div>
+            </div>
+            </div>
         </div>
     </div>
 </div>
@@ -90,16 +93,25 @@
                         <div class="form-group">
                             <label for="inputPesoMedio" class="col-lg-2 control-label">Peso Medio</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputPesoMedio" placeholder="Peso Medio" name="peso_medio">
+                                <input type="number" class="form-control" id="inputPesoMedio" placeholder="Peso Medio" name="peso_medio">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPesoActual" class="col-lg-2 control-label">Peso Actual</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputPesoActual" placeholder="Peso Actual" name="peso_actual">
+                                <input type="number" class="form-control" id="inputPesoActual" placeholder="Peso Actual" name="peso_actual">
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="selectFamilia" class="col-lg-2 control-label">Familia</label>
+                            <div class="col-lg-10">
+                                <select class="form-control" name="familia" id="selectFamilia">
+                                    <?php foreach ($this->params['family'] as $row):?>
+                                        <option value="<?php echo $row['family_id']?>"><?php echo $row['apellido_familia']?></option>
+                                    <?php endforeach;?>
+                                </select>
+                            </div>
+                        </div>
                     </fieldset>
                 </form>
 

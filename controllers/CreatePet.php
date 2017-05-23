@@ -7,12 +7,14 @@ class CreatePet extends BaseController
     {
         parent::__construct($params, $pageName);
         $this->getData();
+        $this->getFamily();
     }
 
-    public function getData ()
+    private function getData ()
     {
         $orm = new Orm();
-        $this->params['data'] = $orm->getAll('pet');
+        $sql = "select * from pet INNER JOIN family ON family.family_id = pet.familia;";
+        $this->params['data'] = $orm->execute($sql);
         $orm->disconnect();
         $orm = null;
     }
@@ -34,5 +36,12 @@ class CreatePet extends BaseController
         $this->getData();
         $this->render();
         $orm=null;
+    }
+
+    private function getFamily () {
+        $orm = new Orm();
+        $this->params['family'] = $orm->getAll('family');
+        $orm->disconnect();
+        $orm = null;
     }
 }

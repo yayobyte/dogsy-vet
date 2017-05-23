@@ -7,15 +7,17 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <span>&nbsp;</span>
+            <a href="?page=createclient" >
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="img/client.jpg" style="width: 125px">
+                    </div>
+                    <div class="panel-footer"><h3 class="panel-title">Registrar Cliente</h3></div>
                 </div>
-                <div class="panel-body text-center">
-                    <img src="img/client.jpg" style="width: 125px">
-                </div>
-                <div class="panel-footer"><h3 class="panel-title">Registrar Cliente</h3></div>
-            </div>
+            </a>
         </div>
 
         <div class="col-sm-3">
@@ -33,15 +35,17 @@
         </div>
 
         <div class="col-sm-3">
-            <div class="panel panel-warning">
-                <div class="panel-heading">
-                    <span>&nbsp;</span>
+            <a href="?page=createfamily" >
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="img/family.jpg" style="width: 125px">
+                    </div>
+                    <div class="panel-footer"><h3 class="panel-title">Registrar Familia</h3></div>
                 </div>
-                <div class="panel-body text-center">
-                    <img src="img/family.jpg" style="width: 125px">
-                </div>
-                <div class="panel-footer"><h3 class="panel-title">Registrar Familia</h3></div>
-            </div>
+            </a>
         </div>
 
         <div class="col-sm-3">

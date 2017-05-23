@@ -39,12 +39,19 @@ class Orm
 
     public function delete ($table, $id)
     {
-        $sql = 'DELETE FROM ' . $table . " WHERE id=" . $id;
+        $sql = 'DELETE FROM ' . $table . " WHERE ".$table."_id=" . $id;
         $this->connection->exec($sql);
     }
 
     public function disconnect ()
     {
         $this->connection = null;
+    }
+
+    public function execute ($sql)
+    {
+        $prepare = $this->connection->prepare($sql);
+        $prepare->execute();
+        return $prepare;
     }
 }

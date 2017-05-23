@@ -5,6 +5,8 @@ include_once('controllers/Home.php');
 include_once('controllers/Error.php');
 include_once('controllers/CreatePet.php');
 include_once('controllers/CreateClient.php');
+include_once('controllers/CreateFamily.php');
+include_once('controllers/MedicalAppointment.php');
 
 class Run {
 

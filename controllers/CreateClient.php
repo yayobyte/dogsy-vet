@@ -7,16 +7,19 @@ class CreateClient extends BaseController
     {
         parent::__construct($params, $pageName);
         $this->getData();
+        $this->getFamily();
     }
 
-    public function getData ()
+    private function getData ()
     {
         $orm = new Orm();
-        $this->params['data'] = $orm->getAll('client');
+        $sql = "select * from client INNER JOIN family ON family.family_id = client.familia;";
+        $this->params['data'] = $orm->execute($sql);
         $orm->disconnect();
         $orm = null;
     }
-    public function createPet ()
+
+    public function createClient ()
     {
         $orm = new Orm();
         $orm->insert('client', array_keys($_POST), array_values($_POST));
@@ -26,7 +29,7 @@ class CreateClient extends BaseController
         $orm=null;
     }
 
-    public function deletePet ()
+    public function deleteClient ()
     {
         $orm = new Orm();
         $orm->delete('client', $_GET['id']);
@@ -34,5 +37,12 @@ class CreateClient extends BaseController
         $this->getData();
         $this->render();
         $orm=null;
+    }
+
+    private function getFamily () {
+        $orm = new Orm();
+        $this->params['family'] = $orm->getAll('family');
+        $orm->disconnect();
+        $orm = null;
     }
 }
