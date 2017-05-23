@@ -8,7 +8,7 @@ class Error extends BaseController
     private $error;
     public function __construct($errorCode, $error)
     {
-        parent::__construct();
+        parent::__construct(null,null);
         $this->errorCode = $errorCode;
         $this->error = $error;
     }

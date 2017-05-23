@@ -4,6 +4,7 @@ include_once('core/BaseController.php');
 include_once('controllers/Home.php');
 include_once('controllers/Error.php');
 include_once('controllers/CreatePet.php');
+include_once('controllers/CreateClient.php');
 
 class Run {
 
@@ -37,7 +38,7 @@ class Run {
                 $controller->render();
             }
         }else{
-            $controller = new Home();
+            $controller = new Home(null, "Home");
             $controller->render();
         }
     }

@@ -7,7 +7,7 @@ abstract class BaseController
     protected $pageName;
     protected $params;
 
-    public function __construct($params=null,$pageName=null)
+    public function __construct($params,$pageName)
     {
         $this->pageName = $pageName;
         $this->params=$params;
