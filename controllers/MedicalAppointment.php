@@ -29,8 +29,9 @@ class MedicalAppointment extends BaseController
         $orm = new Orm();
         $orm->insert('appointment', array_keys($_POST), array_values($_POST));
         $orm->disconnect();
-        $this->init();
-        $this->render();
-        $orm=null;
+        $host  = $_SERVER['HTTP_HOST'];
+        $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'index.php?page=medicalhistory';  // change accordingly
+        header("Location: http://$host$uri/$extra");
     }
 }

@@ -22,7 +22,7 @@
                         <?php foreach ($this->params['data'] as $row):?>
                             <tr>
                                 <td><?php echo $row['client_id']?></td>
-                                <td><?php echo $row['nombre']?></td>
+                                <td><?php echo $row['nombre_cliente']?></td>
                                 <td><?php echo $row['dni']?></td>
                                 <td><span class="text-warning"><?php echo $row['apellido_familia']?></span></td>
                                 <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createclient&action=deleteclient&id=<?php echo $row['client_id']?>">Borrar</a></td>
@@ -54,7 +54,7 @@
                         <div class="form-group">
                             <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="nombre">
+                                <input type="text" class="form-control" id="inputNombre" placeholder="Nombre" name="nombre_cliente">
                             </div>
                         </div>
                         <div class="form-group">

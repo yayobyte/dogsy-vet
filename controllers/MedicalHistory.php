@@ -1,7 +1,7 @@
 <?php
 
 include_once ('core/Orm.php');
-class CreateFamily extends BaseController
+class MedicalHistory extends BaseController
 {
     public function __construct($params, $pageName)
     {
@@ -9,30 +9,28 @@ class CreateFamily extends BaseController
         $this->getData();
     }
 
-    public function getData ()
+    public function getData ($petString = null)
     {
         $orm = new Orm();
-        $this->params['data'] = $orm->getAll('family');
+        $sql = "SELECT * FROM appointment as app
+                    LEFT JOIN family as fam ON app.familia = fam.family_id
+                    LEFT JOIN vet ON app.veterinario = vet.vet_id
+                    LEFT JOIN client as cli ON app.cliente = cli.client_id
+                    LEFT JOIN illness as ill ON app.enfermedad = ill.illness_id
+                    LEFT JOIN pet ON app.mascota = pet.pet_id";
+        if ($petString) {
+            $sql .= " WHERE pet.alias LIKE '%".$petString."%'";
+        }
+        $sql .=";";
+        $this->params['data'] = $orm->execute($sql);
         $orm->disconnect();
         $orm = null;
     }
-    public function createFamily ()
+
+    public function filterByPet ()
     {
-        $orm = new Orm();
-        $orm->insert('family', array_keys($_POST), array_values($_POST));
-        $orm->disconnect();
-        $this->getData();
+        $this->getData($_POST['pet_string']);
         $this->render();
-        $orm=null;
     }
 
-    public function deleteFamily ()
-    {
-        $orm = new Orm();
-        $orm->delete('family', $_GET['id']);
-        $orm->disconnect();
-        $this->getData();
-        $this->render();
-        $orm=null;
-    }
 }

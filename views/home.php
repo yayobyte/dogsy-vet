@@ -49,15 +49,17 @@
         </div>
 
         <div class="col-sm-3">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <span>&nbsp;</span>
+            <a href="?page=medicalappointment" >
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <span>&nbsp;</span>
+                    </div>
+                    <div class="panel-body text-center">
+                        <img src="img/consulta.jpg" style="width: 125px">
+                    </div>
+                    <div class="panel-footer"><h3 class="panel-title">Consulta M&eacute;dica</h3></div>
                 </div>
-                <div class="panel-body text-center">
-                    <img src="img/consulta.jpg" style="width: 125px">
-                </div>
-                <div class="panel-footer"><h3 class="panel-title">Consulta M&eacute;dica</h3></div>
-            </div>
+            </a>
         </div>
     </div>
 </div>

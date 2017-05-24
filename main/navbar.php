@@ -16,7 +16,7 @@
                 <li <?php if ($this->active == 'createclient') { echo 'class="active"'; }?>><a href="?page=createclient">Clientes</a></li>
                 <li <?php if ($this->active == 'createfamily') { echo 'class="active"'; }?>><a href="?page=createfamily">Familias</a></li>
                 <li <?php if ($this->active == 'medicalappointment') { echo 'class="active"'; }?>><a href="?page=medicalappointment">Consulta M&eacute;dica</a></li>
-                <li <?php if ($this->active == 'medicalhystory') { echo 'class="active"'; }?>><a href="?page=medicalhystory">Historia C&iacute;nica</a></li>
+                <li <?php if ($this->active == 'medicalhystory') { echo 'class="active"'; }?>><a href="?page=medicalhistory">Historia C&iacute;nica</a></li>
             </ul>
         </div>
     </div>

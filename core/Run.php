@@ -7,6 +7,7 @@ include_once('controllers/CreatePet.php');
 include_once('controllers/CreateClient.php');
 include_once('controllers/CreateFamily.php');
 include_once('controllers/MedicalAppointment.php');
+include_once('controllers/MedicalHistory.php');
 
 class Run {
 

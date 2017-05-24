@@ -42,7 +42,7 @@
                                         <div class="col-sm-12">
                                             <select class="form-control" name="cliente" id="selectCliente">
                                                 <?php foreach ($this->params['client'] as $row):?>
-                                                    <option value="<?php echo $row['client_id']?>"><?php echo $row['nombre']?></option>
+                                                    <option value="<?php echo $row['client_id']?>"><?php echo $row['nombre_cliente']?></option>
                                                 <?php endforeach;?>
                                             </select>
                                         </div>
