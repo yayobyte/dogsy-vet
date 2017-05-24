@@ -40,7 +40,7 @@
                                     <div class="form-group">
                                         <label for="selectCliente" class="col-lg-2 control-label">Cliente</label>
                                         <div class="col-sm-12">
-                                            <select class="form-control" name="cliente" id="selectCliente">
+                                            <select class="form-control" name="cliente" id="selectCliente" onchange="changeFamily()">
                                                 <?php foreach ($this->params['client'] as $row):?>
                                                     <option value="<?php echo $row['client_id']?>"><?php echo $row['nombre_cliente']?></option>
                                                 <?php endforeach;?>
@@ -52,7 +52,11 @@
                             <div class="row">
                                 <div class="col-sm-6 col-sm-offset-3">
                                     <div class="form-group">
-                                        <input class="form-control text-center" id="inputFamilia" type="text" placeholder="Espera para cargar familia..." disabled="" name="familia">
+                                        <label for="selectFamilia" class="col-lg-2 control-label">Familia</label>
+                                        <div class="col-sm-12">
+                                            <select class="form-control" name="familia" id="selectfamilia" readonly="">
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -120,3 +124,24 @@
         </div>
     </div>
 </div>
+
+<script type="application/javascript">
+
+    $(document).ready(function () {
+        changeFamily();
+    });
+
+    function changeFamily (){
+        var clientId = $('#selectCliente').val();
+        $.ajax( "?page=medicalappointment&action=getfamilydatafromclient&client_id=" + clientId )
+            .done(function(response) {
+                var data = JSON.parse( response );
+                $('#selectfamilia option').remove();
+                $('#selectfamilia').append($('<option>', {
+                    value: data[0].family_id,
+                    text: data[0].apellido_familia
+                }));
+            });
+    }
+
+</script>

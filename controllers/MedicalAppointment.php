@@ -34,4 +34,17 @@ class MedicalAppointment extends BaseController
         $extra = 'index.php?page=medicalhistory';  // change accordingly
         header("Location: http://$host$uri/$extra");
     }
+
+    public function getFamilyDataFromClient (){
+        $orm = new Orm();
+        $sql = "SELECT family_id,apellido_familia FROM family as fam
+                  INNER JOIN client as cli ON cli.familia = fam.family_id
+                  WHERE cli.client_id =".$_GET['client_id'];
+        $this->params['appointment'] = $orm->execute($sql);
+        $result = $this->params['appointment']->fetchAll();
+        $json=json_encode($result);
+        $orm->disconnect();
+        $orm = null;
+        echo $json;
+    }
 }
