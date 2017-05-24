@@ -31,7 +31,7 @@
                                 <td><?php echo $row['direccion']?></td>
                                 <td><?php echo $row['nombres']?></td>
                                 <td><?php echo $row['dni_personas']?></td>
-                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createfamily&action=deletefamily&id=<?php echo $row['family_id']?>">Borrar</a></td>
+                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=CreateFamily&action=deleteFamily&id=<?php echo $row['family_id']?>">Borrar</a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -63,7 +63,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" action="?page=createfamily&action=createfamily" method="post" id="createFamilyForm">
+                <form class="form-horizontal" action="?page=CreateFamily&action=createFamily" method="post" id="createFamilyForm">
                     <fieldset>
                         <legend>Familia</legend>
                         <div class="form-group">

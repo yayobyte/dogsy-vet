@@ -25,7 +25,7 @@
                                 <td><?php echo $row['nombre_cliente']?></td>
                                 <td><?php echo $row['dni']?></td>
                                 <td><span class="text-warning"><?php echo $row['apellido_familia']?></span></td>
-                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createclient&action=deleteclient&id=<?php echo $row['client_id']?>">Borrar</a></td>
+                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=CreateClient&action=deleteClient&id=<?php echo $row['client_id']?>">Borrar</a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -48,7 +48,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" action="?page=createclient&action=createclient" method="post" id="createClientForm">
+                <form class="form-horizontal" action="?page=CreateClient&action=createClient" method="post" id="createClientForm">
                     <fieldset>
                         <legend>Cliente</legend>
                         <div class="form-group">

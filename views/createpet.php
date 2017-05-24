@@ -35,7 +35,7 @@
                         <td><?php echo $row['peso_medio']?></td>
                         <td><?php echo $row['peso_actual']?></td>
                         <td><span class="text-warning"><?php echo $row['apellido_familia']?></span></td>
-                        <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createpet&action=deletepet&id=<?php echo $row['pet_id']?>">Borrar</a></td>
+                        <td><a class="btn btn-danger btn-xs" onclick="" href="?page=CreatePet&action=deletePet&id=<?php echo $row['pet_id']?>">Borrar</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -57,7 +57,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" action="?page=createpet&action=createpet" method="post" id="createPetForm">
+                <form class="form-horizontal" action="?page=CreatePet&action=createPet" method="post" id="createPetForm">
                     <fieldset>
                         <legend>Mascota</legend>
                         <div class="form-group">

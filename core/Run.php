@@ -23,7 +23,7 @@ class Run {
         if (isset($_GET['page']))
         {
             $page = $_GET['page'];
-            if (file_exists('controllers/'. ucfirst($page) . '.php'))
+            if (file_exists('controllers/'. $page . '.php'))
             {
                 if (isset($_GET['action']))
                 {

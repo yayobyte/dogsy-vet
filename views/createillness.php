@@ -21,7 +21,7 @@
                             <tr>
                                 <td><?php echo $row['illness_id']?></td>
                                 <td><?php echo $row['nombre_enfermedad']?></td>
-                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createillness&action=deleteillness&id=<?php echo $row['illness_id']?>">Borrar</a></td>
+                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=CreateIllness&action=deleteIllness&id=<?php echo $row['illness_id']?>">Borrar</a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" action="?page=createillness&action=createillness" method="post" id="createIllness">
+                <form class="form-horizontal" action="?page=CreateIllness&action=createIllness" method="post" id="createIllness">
                     <fieldset>
                         <legend>Veterinarios</legend>
                         <div class="form-group">

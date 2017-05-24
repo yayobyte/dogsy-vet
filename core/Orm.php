@@ -10,10 +10,12 @@ class Orm
 
     public function __construct()
     {
-        $this->server = Config::server;
-        $this->username = Config::username;
-        $this->password = Config::password;
-        $this->db = Config::db;
+        $config = new Config();
+        $this->server =  $config->server;
+        $this->port =  $config->port;
+        $this->username =  $config->username;
+        $this->password =  $config->password;
+        $this->db = $config->db;
         $this->connection = null;
         $this->connect();
 
@@ -22,13 +24,25 @@ class Orm
     public function connect ()
     {
         if (!$this->connection) {
-            $this->connection = new PDO('mysql:host=' . $this->server . ';dbname=' . $this->db, $this->username, $this->password);
+            try {
+                $this->connection = new PDO('mysql:host=' . $this->server . ';port='.$this->port.';dbname=' . $this->db, $this->username, $this->password);
+            }catch (PDOException $e) {
+                print 'Error message: '.$e->getMessage() . ' - Error Code: ' . $e->getCode() . ' - Error info: ' . $e->errorInfo;
+                die();
+            }
         }
     }
 
     public function getAll ($table)
     {
-        return $this->connection->query('SELECT * from '.$table, PDO::FETCH_ASSOC);
+
+        try {
+                $array = $this->connection->query('SELECT * from '.$table, PDO::FETCH_ASSOC);
+            }catch (PDOException $e) {
+                print 'Error message: '.$e->getMessage() . ' - Error Code: ' . $e->getCode() . ' - Error info: ' . $e->errorInfo;
+                die();
+            }
+            return $array;
     }
 
     public function insert ($table, $keys, $values)
