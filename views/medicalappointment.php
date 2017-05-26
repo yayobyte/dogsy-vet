@@ -8,7 +8,7 @@
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-horizontal" action="?page=medicalappointment&action=savedata" method="post" id="medicalAppointmentForm">
+                    <form class="form-horizontal" action="?page=MedicalAppointment&action=saveData" method="post" id="medicalAppointmentForm">
                         <fieldset>
                             <legend>Datos del paciente</legend>
                             <div class="row">
@@ -133,7 +133,7 @@
 
     function changeFamily (){
         var clientId = $('#selectCliente').val();
-        $.ajax( "?page=medicalappointment&action=getfamilydatafromclient&client_id=" + clientId )
+        $.ajax( "?page=MedicalAppointment&action=getFamilyDataFromClient&client_id=" + clientId )
             .done(function(response) {
                 var data = JSON.parse( response );
                 $('#selectfamilia option').remove();

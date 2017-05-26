@@ -21,7 +21,7 @@
                             <tr>
                                 <td><?php echo $row['vet_id']?></td>
                                 <td><?php echo $row['nombre_veterinario']?></td>
-                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=createvet&action=deletevet&id=<?php echo $row['vet_id']?>">Borrar</a></td>
+                                <td><a class="btn btn-danger btn-xs" onclick="" href="?page=CreateVet&action=deleteVet&id=<?php echo $row['vet_id']?>">Borrar</a></td>
                             </tr>
                         <?php endforeach; ?>
                         </tbody>
@@ -45,7 +45,7 @@
             </div>
             <div class="modal-body">
 
-                <form class="form-horizontal" action="?page=createvet&action=createvet" method="post" id="createVet">
+                <form class="form-horizontal" action="?page=CreateVet&action=createVet" method="post" id="createVet">
                     <fieldset>
                         <legend>Veterinarios</legend>
                         <div class="form-group">

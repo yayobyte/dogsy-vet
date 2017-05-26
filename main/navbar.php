@@ -12,13 +12,13 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li <?php if ($this->active == 'createillness') { echo 'class="active"'; }?>><a href="?page=createillness">Enfermedad</a></li>
-                <li <?php if ($this->active == 'createvet') { echo 'class="active"'; }?>><a href="?page=createvet">Veterinario</a></li>
-                <li <?php if ($this->active == 'createpet') { echo 'class="active"'; }?>><a href="?page=createpet">Mascotas</a></li>
-                <li <?php if ($this->active == 'createclient') { echo 'class="active"'; }?>><a href="?page=createclient">Clientes</a></li>
-                <li <?php if ($this->active == 'createfamily') { echo 'class="active"'; }?>><a href="?page=createfamily">Familias</a></li>
-                <li <?php if ($this->active == 'medicalappointment') { echo 'class="active"'; }?>><a href="?page=medicalappointment">Consulta M&eacute;dica</a></li>
-                <li <?php if ($this->active == 'medicalhistory') { echo 'class="active"'; }?>><a href="?page=medicalhistory">Historia C&iacute;nica</a></li>
+                <li <?php if ($this->active == 'CreateIllness') { echo 'class="active"'; }?>><a href="?page=CreateIllness">Enfermedad</a></li>
+                <li <?php if ($this->active == 'CreateVet') { echo 'class="active"'; }?>><a href="?page=CreateVet">Veterinario</a></li>
+                <li <?php if ($this->active == 'CreatePet') { echo 'class="active"'; }?>><a href="?page=CreatePet">Mascotas</a></li>
+                <li <?php if ($this->active == 'CreateClient') { echo 'class="active"'; }?>><a href="?page=CreateClient">Clientes</a></li>
+                <li <?php if ($this->active == 'CreateFamily') { echo 'class="active"'; }?>><a href="?page=CreateFamily">Familias</a></li>
+                <li <?php if ($this->active == 'MedicalAppointment') { echo 'class="active"'; }?>><a href="?page=MedicalAppointment">Consulta M&eacute;dica</a></li>
+                <li <?php if ($this->active == 'MedicalHistory') { echo 'class="active"'; }?>><a href="?page=MedicalHistory">Historia C&iacute;nica</a></li>
             </ul>
         </div>
     </div>

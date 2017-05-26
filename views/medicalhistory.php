@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
-                            <form action="?page=medicalhistory&action=filterbypet" method="post" id="medicalHistoryFilterForm">
+                            <form action="?page=MedicalHistory&action=filterByPet" method="post" id="medicalHistoryFilterForm">
                             <div class="form-group">
                                 <div class="input-group has-success">
                                     <span class="input-group-addon">Buscar Mascota</span>
