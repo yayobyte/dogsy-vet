@@ -15,6 +15,6 @@
             $this->username = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
             $this->port = getenv('OPENSHIFT_MYSQL_DB_PORT');
             $this->password = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
-            $this->db =  'yayobyte';
+            $this->db =  'dogsy';
         }
     }
