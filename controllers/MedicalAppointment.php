@@ -31,7 +31,7 @@ class MedicalAppointment extends BaseController
         $orm->disconnect();
         $host  = $_SERVER['HTTP_HOST'];
         $uri  = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-        $extra = 'index.php?page=medicalhistory';  // change accordingly
+        $extra = 'index.php?page=MedicalHistory';  // change accordingly
         header("Location: http://$host$uri/$extra");
     }
 
